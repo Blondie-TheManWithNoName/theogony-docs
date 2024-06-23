@@ -1,0 +1,17 @@
+{
+  "name": "Zeus",
+  "gender": false,
+  "description": "God of the sky and thunder",
+  "greekName": "Zeus",
+  "romanName": "Jupiter",
+  "parentsId": 25,
+  "partners": [
+    "Metis",
+    "Themis",
+    "Eurynome",
+    "Demeter",
+    "Mnemosyne",
+    "Leto",
+    "Hera"
+  ]
+}
