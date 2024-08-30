@@ -9,6 +9,7 @@ import partners1 from "./examples/partners1.json";
 import ExampleComponent from "./ExampleComponent";
 import partnersResources from "./examples/partnersResources.json";
 import TableComponent from "./TableComponent";
+import GetComponent from "./GetComponent";
 
 function App() {
   return (
@@ -54,10 +55,15 @@ function App() {
             GET method for accessing the resources. No authentication is needed
             to use this API; all resources are openly accessible.
           </p>
-          <article className="mt-8">
+        </section>
+        <section className="w-8/12 mt-10">
+          <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
+            Resource List
+          </h2>
+          <article className="mt-4">
             {" "}
             <p>This project is divided in two main resources:</p>
-            <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 mt-4">
+            <ul class=" space-y-1 list-inside pl-4 grid grid-cols-[auto_18rem_auto_1fr] gap-x-5 gap-y-2 mt-4 items-center">
               <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Myths
@@ -65,17 +71,29 @@ function App() {
               </li>
               <p>all of the mythological creatures.</p>
               <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/myths</code>
+              <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Relationships
                 </mark>{" "}
               </li>
-              <p>relationships between all the creatures.</p>
+              <p>relationships between the creatures.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/relationships</code>
             </ul>
             <p className="mt-6">
               However if you want a more specific type of mythological creature
               there are specific endpoint to filter them:
             </p>
-            <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 mt-4">
+            <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_18rem_auto_1fr] gap-x-5 gap-y-2 mt-4 items-center">
               <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Primordials
@@ -83,11 +101,23 @@ function App() {
               </li>
               <p>first-born immortal Gods.</p>
               <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/primordials</code>
+              <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Gods
                 </mark>{" "}
               </li>
-              <p>non-specific Gods such as Olympians, Underworld, etc.</p>
+              <p>non-specific Gods such as Olympians.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/gods</code>
               <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Titans
@@ -95,11 +125,24 @@ function App() {
               </li>
               <p>Titan-Gods deities.</p>
               <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/titans</code>
+              <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Daemons
                 </mark>{" "}
               </li>
+
               <p>personified spirits deities.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/daemons</code>
               <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Nymphs
@@ -107,30 +150,48 @@ function App() {
               </li>
               <p>minor goddesses.</p>
               <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/nymphs</code>
+              <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Beasts
                 </mark>{" "}
               </li>
               <p>monsters, giants, dragons, etc.</p>
               <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/beasts</code>
+              <li class="justify-self-end">
                 <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
                   Mortals
                 </mark>{" "}
               </li>
-              <p>non-immortal creatures, mainly humans.</p>
+              <p>non-immortal creatures.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-blue-500 rounded select-none font-medium">
+                  GET
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter ml-2">/mortals</code>
             </ul>
           </article>
+          <ExampleComponent
+            req="GET"
+            url={["https://api.theogonia.net/myths"]}
+            jsonFiles={[example]}
+          />
+          <ExampleComponent
+            req="GET"
+            url={["https://api.theogonia.net/relationships"]}
+            jsonFiles={[partnersResources]}
+          />
         </section>
-        <ExampleComponent
-          title="Resource List"
-          // description="There two main resources: Myths and Relationships"
-          req="GET"
-          url={[
-            "https://api.theogonia.net/myths",
-            "https://api.theogonia.net/relationships",
-          ]}
-          jsonFiles={[example, partnersResources]}
-        />
         <TableComponent
           list={[
             {
@@ -155,17 +216,21 @@ function App() {
             },
           ]}
         />
-        <ExampleComponent
-          title="God"
-          description="In here you can find every Greek God, Olympians, Titans, Primordials, Sky Gods, Sea Gods, etc.
+        <section className="w-8/12 mt-10">
+          <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
+            God
+          </h2>
+          <ExampleComponent
+            description="In here you can find every Greek God, Olympians, Titans, Primordials, Sky Gods, Sea Gods, etc.
           As well as other mythological creatures, monsters, demons, nymphs, giants, heroes etc."
-          req="GET"
-          url={[
-            "https://api.theogonia.net/gods/{id or name}",
-            "https://api.theogonia.net/gods/random",
-          ]}
-          jsonFiles={[example1]}
-        />
+            req="GET"
+            url={[
+              "https://api.theogonia.net/gods/{id or name}",
+              "https://api.theogonia.net/gods/random",
+            ]}
+            jsonFiles={[example1]}
+          />
+        </section>
         <TableComponent
           list={[
             {
@@ -206,16 +271,21 @@ function App() {
             },
           ]}
         />
-        <ExampleComponent
-          title="Partners"
-          description="Here you can find every relationship any God or mythological creature had and how many kids and their names."
-          req="GET"
-          url={[
-            "https://api.theogonia.net/partners/{ id }",
-            "https://api.theogonia.net/partners?p1={ partner1Name }&p2={ partner2Name }",
-          ]}
-          jsonFiles={[partners1]}
-        />
+        <section className="w-8/12 mt-10">
+          <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
+            Relationships
+          </h2>
+          <ExampleComponent
+            description="Here you can find every relationship any God or mythological creature had and how many kids and their names."
+            req="GET"
+            url={[
+              "https://api.theogonia.net/partners/{ id }",
+              "https://api.theogonia.net/partners?p1={ partner1Name }&p2={ partner2Name }",
+            ]}
+            jsonFiles={[partners1]}
+          />
+        </section>
+
         <TableComponent
           list={[
             {

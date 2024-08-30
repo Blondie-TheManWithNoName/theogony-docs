@@ -1,5 +1,6 @@
 import React from "react";
 import ReactJson from "react-json-view";
+import GetComponent from "./GetComponent";
 
 export default function ExampleComponent({
   title,
@@ -12,10 +13,7 @@ export default function ExampleComponent({
     backgroundColor: "#fafafa",
   };
   return (
-    <section className="w-8/12 mt-10">
-      <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
-        {title}
-      </h2>
+    <>
       <p className="mb-4">{description}</p>
       {(jsonFiles.length <= 1 ? url : url.slice(0, 1)).map((item, index) => (
         <p className="mt-2" key={index}>
@@ -27,14 +25,7 @@ export default function ExampleComponent({
       ))}
       {jsonFiles.map((file, index) => (
         <div key={index} className="mt-2">
-          {index > 0 ? (
-            <p className="mt-8">
-              <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500 font-medium">
-                {req}
-              </mark>
-              <code className="tracking-tighter ml-2">{url[index]}</code>
-            </p>
-          ) : null}
+          {index > 0 ? GetComponent((req = { req }), (url = url[index])) : null}
           <p className="mt-5">
             <ReactJson
               src={file}
@@ -47,6 +38,6 @@ export default function ExampleComponent({
           </p>
         </div>
       ))}
-    </section>
+    </>
   );
 }
