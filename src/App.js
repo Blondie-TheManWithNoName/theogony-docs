@@ -89,9 +89,9 @@ function App() {
               </li>
               <code className="tracking-tighter ml-2">/relationships</code>
             </ul>
-            <p className="mt-6">
+            <p className="mt-8">
               However if you want a more specific type of mythological creature
-              there are specific endpoint to filter them:
+              there are specific endpoints to get them:
             </p>
             <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_18rem_auto_1fr] gap-x-5 gap-y-2 mt-4 items-center">
               <li class="justify-self-end">
@@ -180,7 +180,33 @@ function App() {
               </li>
               <code className="tracking-tighter ml-2">/mortals</code>
             </ul>
+            <p className="mt-8">
+              This project comes with pagination aswell. There's a limit which
+              is the number of items to get in a petition and an offset which is
+              the number of the start item. These are the default values:
+            </p>
+            <ul class=" space-y-1 list-inside pl-16 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 mt-4 items-center">
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-slate-500 rounded select-none font-medium">
+                  limit
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter" style={{ marginTop: 0 }}>
+                20
+              </code>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-slate-500 rounded select-none font-medium">
+                  offset
+                </mark>{" "}
+              </li>
+              <code className="tracking-tighter" style={{ marginTop: 0 }}>
+                20
+              </code>
+            </ul>
           </article>
+          <h3 className="text-xl uppercase tracking-tight font-cocogoose text-title mt-10">
+            Examples
+          </h3>
           <ExampleComponent
             req="GET"
             url={["https://api.theogonia.net/myths"]}
