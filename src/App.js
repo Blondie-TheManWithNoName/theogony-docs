@@ -211,14 +211,17 @@ function App() {
             req="GET"
             url={["https://api.theogonia.net/myths"]}
             jsonFiles={[example]}
+            marginTop={"2rem"}
           />
           <ExampleComponent
             req="GET"
             url={["https://api.theogonia.net/relationships"]}
             jsonFiles={[partnersResources]}
+            marginTop={"3rem"}
           />
         </section>
         <TableComponent
+          marginTop={"2rem"}
           list={[
             {
               name: "count",
@@ -228,17 +231,17 @@ function App() {
             {
               name: "next",
               description: "URL for the next page.",
-              type: "integer",
+              type: "string",
             },
             {
               name: "previous",
               description: "URL for the previous page.",
-              type: "integer",
+              type: "string",
             },
             {
               name: "results",
               description: "Results with the list of resources demanded.",
-              type: "integer",
+              type: "object[]",
             },
           ]}
         />
@@ -246,18 +249,32 @@ function App() {
           <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
             Myths
           </h2>
+          <p className="mt-4">
+            With this endpoint you can fetch more information about all the
+            Mythological Creatures, <i>Primordials</i>, <i>Gods</i>,{" "}
+            <i>Titans</i>, <i>Daemons</i>, <i>Nymphs</i>, <i>Beasts</i> and{" "}
+            <i>Mortals</i>. It'll give you information such as gender, type, its
+            parents, its partners and other information depending on the
+            mythological creature.
+          </p>
+          <p className="mt-2">
+            You can either search its name or write <i>rand</i> and get a random
+            creature. This <i>rand</i> can be applied to the whole pool on
+            /myths or be used on the single types endpoints if for instance you
+            only want a random Titan.
+          </p>
           <ExampleComponent
-            description="In here you can find every Greek God, Olympians, Titans, Primordials, Sky Gods, Sea Gods, etc.
-          As well as other mythological creatures, monsters, demons, nymphs, giants, heroes etc."
             req="GET"
             url={[
               "https://api.theogonia.net/myths/{name}",
-              "https://api.theogonia.net/myths/random",
+              "https://api.theogonia.net/myths/rand",
             ]}
             jsonFiles={[example1]}
+            marginTop={"2rem"}
           />
         </section>
         <TableComponent
+          marginTop={"2rem"}
           list={[
             {
               name: "name",
@@ -343,6 +360,7 @@ function App() {
         </section>
 
         <TableComponent
+          marginTop={"2rem"}
           list={[
             {
               name: "id",
@@ -362,7 +380,7 @@ function App() {
             {
               name: "children",
               description: "Children that both gods had together.",
-              type: "list",
+              type: "string[]",
             },
           ]}
         />

@@ -8,13 +8,16 @@ export default function ExampleComponent({
   req,
   url,
   jsonFiles,
+  marginTop,
 }) {
   const customStyle = {
     backgroundColor: "#fafafa",
   };
   return (
     <>
-      <p className="mb-4">{description}</p>
+      <p className="mb-4" style={{ marginTop: marginTop }}>
+        {description}
+      </p>
       {(jsonFiles.length <= 1 ? url : url.slice(0, 1)).map((item, index) => (
         <p className="mt-2" key={index}>
           <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500 select-none font-medium">
