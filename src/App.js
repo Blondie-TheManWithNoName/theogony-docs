@@ -244,15 +244,15 @@ function App() {
         />
         <section className="w-8/12 mt-10">
           <h2 className="text-2xl uppercase tracking-tight font-cocogoose text-title">
-            God
+            Myths
           </h2>
           <ExampleComponent
             description="In here you can find every Greek God, Olympians, Titans, Primordials, Sky Gods, Sea Gods, etc.
           As well as other mythological creatures, monsters, demons, nymphs, giants, heroes etc."
             req="GET"
             url={[
-              "https://api.theogonia.net/gods/{id or name}",
-              "https://api.theogonia.net/gods/random",
+              "https://api.theogonia.net/myths/{name}",
+              "https://api.theogonia.net/myths/random",
             ]}
             jsonFiles={[example1]}
           />
@@ -267,33 +267,63 @@ function App() {
             {
               name: "gender",
               description: "Gender of the god.",
-              type: "boolean",
+              type: "male | female",
             },
             {
-              name: "description",
-              description: "Description of the god.",
-              type: "string",
-            },
-            {
-              name: "greekName",
-              description: "God's name in original greek.",
-              type: "string",
-            },
-            {
-              name: "romanName",
-              description: "God's name in Roman version.",
+              name: "type",
+              description: "Type of Mythological creature.",
               type: "string",
             },
             {
               name: "parentsId",
               description: "Id of the God's parents.",
-              type: "integer",
+              type: "integer | null",
+            },
+            // {
+            //   name: "description",
+            //   description: "Description of the god.",
+            //   type: "string",
+            // },
+            // {
+            //   name: "greekName",
+            //   description: "God's name in original greek.",
+            //   type: "string",
+            // },
+            // {
+            //   name: "romanName",
+            //   description: "God's name in Roman version.",
+            //   type: "string",
+            // },
+            {
+              name: "element?",
+              description: "Attribute of Primordials.",
+              type: "string",
             },
             {
-              name: "partners",
+              name: "personification?",
+              description: "Attribute of Daemons.",
+              type: "string[]",
+            },
+            {
+              name: "kind?",
+              description: "Attribute of Beasts.",
+              type: "string",
+            },
+            {
+              name: "domains?",
+              description: "Attribute of Gods and Titans.",
+              type: "string[]",
+            },
+            {
+              name: "symbols?",
+              description: "Attribute of Gods and Titans.",
+              type: "string[]",
+            },
+            {
+              name: "relationshipsIds",
               description:
                 "Partners (wives or husbands) that the God had relationships with.",
-              type: "list",
+              type: "integer[]",
             },
           ]}
         />
@@ -305,8 +335,8 @@ function App() {
             description="Here you can find every relationship any God or mythological creature had and how many kids and their names."
             req="GET"
             url={[
-              "https://api.theogonia.net/partners/{ id }",
-              "https://api.theogonia.net/partners?p1={ partner1Name }&p2={ partner2Name }",
+              "https://api.theogonia.net/partners/{id}",
+              "https://api.theogonia.net/partners?p1={partner1Name}&p2partner2Name}",
             ]}
             jsonFiles={[partners1]}
           />
@@ -322,7 +352,7 @@ function App() {
             {
               name: "partner_1",
               description: "First partner",
-              type: "boolean",
+              type: "string",
             },
             {
               name: "partner_2",

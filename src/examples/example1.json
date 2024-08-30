@@ -1,17 +1,15 @@
 {
   "name": "Zeus",
-  "gender": false,
-  "description": "God of the sky and thunder",
-  "greekName": "Zeus",
-  "romanName": "Jupiter",
-  "parentsId": 25,
-  "partners": [
-    "Metis",
-    "Themis",
-    "Eurynome",
-    "Demeter",
-    "Mnemosyne",
-    "Leto",
-    "Hera"
-  ]
+  "gender": "male",
+  "type": "God",
+  "parentsId": 19,
+  "domains": [
+    "Destiny and Fate",
+    "Kingship",
+    "Law and Order",
+    "The Sky",
+    "Weather"
+  ],
+  "symbols": ["Lightning Bolt"],
+  "relationshipsIds": [40, 41, 42, 43, 44, 45, 46, 49, 51]
 }
