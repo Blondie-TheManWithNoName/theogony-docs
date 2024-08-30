@@ -3,9 +3,11 @@
   "next": "https://api.theogonia.net/partners?limit=20&offset=20",
   "previous": null,
   "results": [
+    { "": "..." },
     {
       "id": 25,
       "url": "https://api.theogonia.net/partners/25"
-    }
+    },
+    { "": "..." }
   ]
 }
