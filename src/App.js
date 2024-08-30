@@ -38,29 +38,96 @@ function App() {
           </h2>
           <p className="mt-4">
             <i>Theogony API</i> is a REST API that gives you the possibility to
-            retrieve information about Greek gods and the relationships and
-            partnerships they had. This way, e.g., you are able to trace the
-            entire Greek Gods Family Tree from a child to its great, great,
-            great grandfather.
+            retrieve information about Greek Mythology Gods, Titans, Spirits,
+            Nymphs, Beasts and the relationships and partnerships they had. This
+            way, you are able to trace the entire Greek Mythology Family Tree
+            from a child to its great, great, great... grandfather.
           </p>
           <p className="mt-4">
-            Note that the information about all the gods, as well as
-            relationships and partnerships, is heavily based on Hesiod's
-            Theogony. Therefore, this API does not take into account other Greek
-            mythology sources, such as Homer or Aeschylus.
+            Note that the information about all the deities and beasts, as well
+            as relationships and parentship, is based on Hesiod's Theogony.
+            Therefore, bare in mind that this API does not take into account
+            other Greek mythology sources, such as Homer or Aeschylus.
           </p>
           <p className="mt-8">
             This API is designed for consumption only, supporting only the HTTP
             GET method for accessing the resources. No authentication is needed
             to use this API; all resources are openly accessible.
           </p>
+          <article className="mt-8">
+            {" "}
+            <p>This project is divided in two main resources:</p>
+            <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 mt-4">
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Myths
+                </mark>{" "}
+              </li>
+              <p>all of the mythological creatures.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Relationships
+                </mark>{" "}
+              </li>
+              <p>relationships between all the creatures.</p>
+            </ul>
+            <p className="mt-6">
+              However if you want a more specific type of mythological creature
+              there are specific endpoint to filter them:
+            </p>
+            <ul class=" space-y-1 list-inside pl-8 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 mt-4">
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Primordials
+                </mark>{" "}
+              </li>
+              <p>first-born immortal Gods.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Gods
+                </mark>{" "}
+              </li>
+              <p>non-specific Gods such as Olympians, Underworld, etc.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Titans
+                </mark>{" "}
+              </li>
+              <p>Titan-Gods deities.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Daemons
+                </mark>{" "}
+              </li>
+              <p>personified spirits deities.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Nymphs
+                </mark>{" "}
+              </li>
+              <p>minor goddesses.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Beasts
+                </mark>{" "}
+              </li>
+              <p>monsters, giants, dragons, etc.</p>
+              <li class="justify-self-end">
+                <mark className="px-2 text-white bg-[#38B263] rounded select-none font-medium">
+                  Mortals
+                </mark>{" "}
+              </li>
+              <p>non-immortal creatures, mainly humans.</p>
+            </ul>
+          </article>
         </section>
         <ExampleComponent
           title="Resource List"
+          // description="There two main resources: Myths and Relationships"
           req="GET"
           url={[
-            "https://api.theogonia.net/gods",
-            "https://api.theogonia.net/partners",
+            "https://api.theogonia.net/myths",
+            "https://api.theogonia.net/relationships",
           ]}
           jsonFiles={[example, partnersResources]}
         />

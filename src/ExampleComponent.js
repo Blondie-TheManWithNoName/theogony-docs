@@ -19,7 +19,7 @@ export default function ExampleComponent({
       <p className="mb-4">{description}</p>
       {(jsonFiles.length <= 1 ? url : url.slice(0, 1)).map((item, index) => (
         <p className="mt-2" key={index}>
-          <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500 select-none">
+          <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500 select-none font-medium">
             {req}
           </mark>
           <code className="tracking-tighter ml-2">{item}</code>
@@ -29,7 +29,7 @@ export default function ExampleComponent({
         <div key={index} className="mt-2">
           {index > 0 ? (
             <p className="mt-8">
-              <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
+              <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500 font-medium">
                 {req}
               </mark>
               <code className="tracking-tighter ml-2">{url[index]}</code>

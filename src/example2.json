@@ -1,11 +1,11 @@
 {
-  "count": 248,
-  "next": "https://api.theogonia.net/gods/?limit=20&offset=20",
+  "count": 217,
+  "next": "https://api.theogonia.net/myths/?limit=20&offset=20",
   "previous": null,
   "results": [
     {
       "name": "Zeus",
-      "url": "https://api.theogonia.net/gods/Zeus"
+      "url": "https://api.theogonia.net/myths/Zeus"
     }
   ]
 }
